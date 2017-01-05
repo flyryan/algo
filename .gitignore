@@ -2,3 +2,5 @@
 configs/*
 inventory_users
 *.kate-swp
+apikeys/*
+.DS_Store
