@@ -7,7 +7,7 @@
   pre_tasks:
     - name: Local pre-tasks
       include: playbooks/local.yml
-      tags: [ 'cloud' ]
+      tags: [ 'always' ]
 
   roles:
     - { role: cloud-digitalocean, tags: ['digitalocean'] }
@@ -60,3 +60,6 @@
   post_tasks:
     - debug: msg="{{ congrats.split('\n') }}"
       tags: always
+
+    - debug: msg="{{ additional_information.split('\n') }}"
+      tags: cloud
